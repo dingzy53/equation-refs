@@ -9,12 +9,13 @@ body {
 	--eqref-number-gutter: 3em;
 }
 
-mjx-container.MathJax[display='true'].eqref-numbered {
+/* Set only on display math (mjx-container[display="true"]) by the plugin. */
+.MathJax.eqref-numbered {
 	position: relative;
 	padding-inline: var(--eqref-number-gutter);
 }
 
-mjx-container.MathJax[display='true'].eqref-numbered::after {
+.MathJax.eqref-numbered::after {
 	content: attr(data-eq-number);
 	position: absolute;
 	right: 0;

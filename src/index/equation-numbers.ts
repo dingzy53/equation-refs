@@ -76,7 +76,12 @@ export class EquationNumbers extends Component {
 
 	private async rebuild(): Promise<void> {
 		this.refs.clear();
-		for (const file of this.app.vault.getMarkdownFiles()) this.refs.updateSource(file);
+		// Walk the metadata cache's link graph rather than listing vault files.
+		const { metadataCache, vault } = this.app;
+		for (const path of Object.keys(metadataCache.resolvedLinks)) {
+			const file = vault.getFileByPath(path);
+			if (file) this.refs.updateSource(file);
+		}
 		const paths = new Set([...this.labels.keys(), ...this.refs.targets()]);
 		await Promise.all([...paths].map((path) => this.recompute(path)));
 	}
