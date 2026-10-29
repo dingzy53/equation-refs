@@ -1,6 +1,6 @@
 {
 	"name": "equation-refs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Number display equations only when they are linked, and show links to them as their numbers.",
 	"main": "main.js",
 	"type": "module",
