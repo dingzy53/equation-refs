@@ -1,0 +1,32 @@
+/* Equation Refs
+ * Numbers are drawn with CSS so MathJax never has to re-render.
+ * Themes and snippets can override these variables.
+ */
+body {
+	--eqref-number-font: var(--font-text);
+	--eqref-number-color: var(--text-normal);
+	--eqref-number-size: var(--font-text-size, 1em);
+	--eqref-number-gutter: 3em;
+}
+
+mjx-container.MathJax[display='true'].eqref-numbered {
+	position: relative;
+	padding-inline: var(--eqref-number-gutter);
+}
+
+mjx-container.MathJax[display='true'].eqref-numbered::after {
+	content: attr(data-eq-number);
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: var(--eqref-number-font);
+	font-size: var(--eqref-number-size);
+	font-style: normal;
+	color: var(--eqref-number-color);
+	white-space: nowrap;
+}
+
+.cm-hmd-internal-link.eqref-link {
+	cursor: var(--cursor-link, pointer);
+}

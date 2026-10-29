@@ -1,0 +1,18 @@
+# editors
+.vscode
+.idea
+*.iml
+
+# npm
+node_modules
+
+# build output (uploaded to GitHub releases instead)
+main.js
+*.map
+
+# obsidian
+data.json
+test-vault/.obsidian/
+
+# OS
+.DS_Store

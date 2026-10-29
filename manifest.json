@@ -1,0 +1,10 @@
+{
+	"id": "equation-refs",
+	"name": "Equation Refs",
+	"version": "1.0.0",
+	"minAppVersion": "1.13.0",
+	"description": "Number display equations only when they are linked, and show those links as equation numbers in reading view, live preview, and PDF export.",
+	"author": "Ding Zheng Yuan",
+	"authorUrl": "https://github.com/dingzy53",
+	"isDesktopOnly": false
+}
