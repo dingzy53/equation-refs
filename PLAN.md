@@ -216,7 +216,7 @@ equation-refs/
   package.json  package-lock.json  tsconfig.json  esbuild.config.mjs
   eslint.config.mts  version-bump.mjs  .gitignore  .npmrc  .editorconfig  styles.css
   .github/workflows/lint.yml      build + lint + test on every push and pull request (Node 22/24; vitest 5 needs Node ≥ 22.12)
-  .github/workflows/release.yml   on a tag push: npm ci, build, attest provenance, draft release with main.js, manifest.json, styles.css
+  .github/workflows/release.yml   on a tag push: npm ci, build, attest provenance, publish a release with main.js, manifest.json, styles.css
   src/…  test/…  test-vault/…
 ```
 
@@ -284,7 +284,7 @@ The process changed in 2026. You no longer open a pull request to `obsidian-rele
 **Repository and release**
 - [ ] `README.md`, `LICENSE` and `manifest.json` at the repository root.
 - [ ] The `version` in `manifest.json` on the default branch's HEAD equals the release tag, e.g. `1.0.0`.
-- [ ] GitHub release (made as a draft by `release.yml`, then published by you) has `main.js`, `manifest.json` and `styles.css` attached as separate files.
+- [ ] GitHub release (created and published by `release.yml` when a version tag is pushed) has `main.js`, `manifest.json` and `styles.css` attached as separate files.
 - [ ] `versions.json` updated (`npm version patch|minor|major` does this).
 
 **Submission**
